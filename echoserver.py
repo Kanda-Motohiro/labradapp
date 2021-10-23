@@ -35,5 +35,4 @@ class EchoServer(LabradServer):
 __server__ = EchoServer()
 
 if __name__ == '__main__':
-    from labrad import util
     util.runServer(__server__)
