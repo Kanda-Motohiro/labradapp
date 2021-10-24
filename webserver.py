@@ -1,6 +1,5 @@
-# webserver.py by kanda.motohiro@gmail.com
-# Released under GPL v3.
-# https://flask.palletsprojects.com/en/2.0.x/quickstart/#a-minimal-application
+# webserver.py by kanda.motohiro@gmail.com. Released under GPL v3.
+# see https://flask.palletsprojects.com/en/2.0.x/quickstart/#a-minimal-application
 from flask import Flask
 from markupsafe import escape
 import os
@@ -19,6 +18,7 @@ def echo(path):
     return out
 
 
+# 非同期。
 @app.route("/aecho/<path>")
 def async_echo(path):
     out = echo_client.async_echo(path)
@@ -35,12 +35,23 @@ def root():
 </header>
 <body>
 <h1>Toy LabRAD echo client</h1>
+
+<input id="input0">
 <button type="button" onclick="button0()">
-button0
+echo
 </button>
 <br />
-<label id="label0"></label>
+<label id="label0">output</label>
 <br />
+
+<input id="input1">
+<button type="button" onclick="button1()">
+echo async
+</button>
+<br />
+<label id="label1">output</label>
+<br />
+
 </body>
 </html>"""
 
