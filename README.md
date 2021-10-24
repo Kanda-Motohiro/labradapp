@@ -1,4 +1,3 @@
-# labradapp
 Toy LabRAD application
 ====
 
