@@ -14,7 +14,7 @@ os.environ["LABRADPASSWORD"] = ""
 class EchoServer(LabradServer):
     # プロセスごとに別の名前にする。
     name = "EchoServer{}".format(os.getpid())
-    
+
     @inlineCallbacks
     def initServer(self):
         self.pid = os.getpid()
@@ -36,6 +36,7 @@ class EchoServer(LabradServer):
         yield util.wakeupCall(10)
         out = data + " from {} at {}".format(self.pid, time.ctime())
         returnValue(out)
+
 
 __server__ = EchoServer()
 

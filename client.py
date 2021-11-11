@@ -51,12 +51,14 @@ class EchoClient:
 
         return out
 
+
 def main():
     client = EchoClient()
     out = client.echo("Hello")
     print("\n".join(out))
     out = client.async_echo("Hello again")
     print("\n".join(out))
-        
+
+
 if __name__ == '__main__':
     main()
