@@ -1,11 +1,14 @@
+#!/usr/bin/python3
 # client.py for labrad echoserver by kanda.motohiro@gmail.com
 # Released under GPL v3. Based on code on https://github.com/labrad/pylabrad.
 import labrad
 import os
+import sys
 from typing import List
 
 os.environ["LABRADHOST"] = "localhost"
 os.environ["LABRADPASSWORD"] = ""
+
 
 class EchoClient:
     def __init__(self):
@@ -17,6 +20,9 @@ class EchoClient:
             name = server[1]
             if name.startswith("EchoServer"):
                 self.echoServers.append(self.cxn[name])
+        if not self.echoServers:
+            print("no echo servers found")
+            sys.exit(1)
 
     def echo(self, data: str) -> List[str]:
         out = []

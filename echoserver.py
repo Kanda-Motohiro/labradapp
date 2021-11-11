@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # echoserver.py for labrad by kanda.motohiro@gmail.com
 # Released under GPL v3. Based on code on https://github.com/labrad/pylabrad.
 from labrad.server import LabradServer, setting
@@ -5,6 +6,10 @@ from twisted.internet.defer import inlineCallbacks, returnValue
 from labrad import util
 import os
 import time
+
+os.environ["LABRADHOST"] = "localhost"
+os.environ["LABRADPASSWORD"] = ""
+
 
 class EchoServer(LabradServer):
     # プロセスごとに別の名前にする。

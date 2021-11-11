@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # webserver.py by kanda.motohiro@gmail.com. Released under GPL v3.
 # see https://flask.palletsprojects.com/en/2.0.x/quickstart/#a-minimal-application
 from flask import Flask
@@ -29,6 +30,7 @@ def async_echo(path):
 @app.route("/")
 def root():
     return """
+<!DOCTYPE html>
 <html>
 <header>
 <script src="static/app.js"></script>
