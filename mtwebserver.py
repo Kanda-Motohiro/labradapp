@@ -31,6 +31,10 @@ class EchoHandler(http.server.BaseHTTPRequestHandler):
 
         if status == 200:
             self.send_response(status)
+            if self.path.endswith(".js"):
+                self.send_header("Content-Type", "text/javascript;charset=UTF-8")
+            else:
+                self.send_header("Content-Type", "text/html;charset=UTF-8")
             self.end_headers()
             self.wfile.write(buf.encode("utf-8"))
         else:

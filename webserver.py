@@ -21,6 +21,7 @@ def root():
 <!DOCTYPE html>
 <html>
 <header>
+<!-- <script type="module" src="static/app.js"></script> -->
 <script src="static/app.js"></script>
 </header>
 <body>
