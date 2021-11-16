@@ -21,14 +21,13 @@ def root():
 <!DOCTYPE html>
 <html>
 <header>
-<!-- <script type="module" src="static/app.js"></script> -->
 <script src="static/app.js"></script>
 </header>
 <body>
 <h1>Toy LabRAD echo client</h1>
 
 <input id="input0">
-<button type="button" onclick="button0()">
+<button type="button" id="button0">
 echo
 </button>
 <br />
@@ -36,7 +35,7 @@ echo
 <br />
 
 <input id="input1">
-<button type="button" onclick="button1()">
+<button type="button" id="button1">
 echo async
 </button>
 <br />

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "lib": ["es2019", "dom"],
-    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "module": "umd",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
