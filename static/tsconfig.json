@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "lib": ["es6", "dom"],
-    "module": "umd",
+    "module": "es6",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

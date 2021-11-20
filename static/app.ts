@@ -3,7 +3,7 @@
  */
 console.log("app.ts loaded")
 
-function echo(url: string) :Promise<string> {
+export function echo(url: string) :Promise<string> {
     return fetch(url)
     .then(function(response: Response) {
         if (response.ok) {
@@ -11,9 +11,13 @@ function echo(url: string) :Promise<string> {
         }
         throw new Error(response.statusText)
     })
+    .catch(error => {
+        console.error("failed to invoke echo to ${url}", error)
+        return error
+    })
 }
 
-async function onClick(input_id: string, path: string, output_id: string) :Promise<void> {
+function onClick(input_id: string, path: string, output_id: string) :void {
 	// ここに書かれたものを、
     const input:HTMLInputElement = <HTMLInputElement>document.getElementById(input_id)
 	// ここにエコーバックして出す。
@@ -27,8 +31,10 @@ async function onClick(input_id: string, path: string, output_id: string) :Promi
     const url = document.location.origin + "/" + path + "/" + data
     console.log(url)
 
-	const out = await echo(url)
-	output.innerHTML = out
+	echo(url)
+    .then(function(text: string) {
+	    output.innerHTML = text
+    })
 }
 
 function button0() :void {

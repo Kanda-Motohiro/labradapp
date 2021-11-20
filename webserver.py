@@ -21,7 +21,7 @@ def root():
 <!DOCTYPE html>
 <html>
 <header>
-<script src="static/app.js"></script>
+<script type="module" src="static/app.js"></script>
 </header>
 <body>
 <h1>Toy LabRAD echo client</h1>
